@@ -1,4 +1,4 @@
-import CampsiteCard from "./CampsiteCard";
+import CampsiteCard from './campsiteCard';
 import {CAMPSITES} from "../../app/shared/CAMPSITES";
 import {Col,Row} from 'reactstrap';
 

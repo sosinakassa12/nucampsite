@@ -1,9 +1,5 @@
-import React from 'react';
 import { Container, Navbar, NavbarBrand } from 'reactstrap';
 import NumcapLogo from '../app/assets/img/logo.png';
-
-
-
 
 const Header = () => {
     return (
@@ -16,7 +12,4 @@ const Header = () => {
         </Navbar>
         )
 }
-    
-
-
 export default Header;
