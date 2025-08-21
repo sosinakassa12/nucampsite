@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container} from 'reactstrap';
 import {Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
@@ -19,8 +18,8 @@ function App() {
         <Route path='contact' element={<ContactPage />} />
         <Route path='directory' element={<CampsitesDirectoryPage />} />
         <Route
-                    path='directory/:campsiteId'
-                    element={<CampsiteDetailPage />}
+               path='directory/:campsiteId'
+               element={<CampsiteDetailPage />}
                 />
         <Route path='about' element={<AboutPage />} />
       </Routes>
