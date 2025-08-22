@@ -1,5 +1,6 @@
 import {Button, Col, Row, Container, Label, FormGroup} from 'reactstrap';
 import { Formik,Form, Field, ErrorMessage } from 'formik';
+import { validateContactForm } from '../utils/validateContactForm';
 
 const ContactForm = () => {
     const handleSubmit = (values, { resetForm }) => {
@@ -20,6 +21,7 @@ const ContactForm = () => {
                 
             }}
             onSubmit={handleSubmit}
+            validate={validateContactForm}
         >
             <Form>
                 <FormGroup row>
@@ -28,6 +30,9 @@ const ContactForm = () => {
                     </Label>
                     <Col md='10'>
                         <Field name='firstName' placeholder='First Name' className='form-control' />
+                        <ErrorMessage name='firstName'>
+                            {(msg) => <p className='text-danger'>{msg}</p>}
+                        </ErrorMessage>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -36,7 +41,9 @@ const ContactForm = () => {
                     </Label>
                     <Col md='10'>
                         <Field name='lastName' placeholder='Last Name' className='form-control' />
-
+                        <ErrorMessage name='lastName'>
+                            {(msg) => <p className='text-danger'>{msg}</p>}
+                        </ErrorMessage>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -44,8 +51,10 @@ const ContactForm = () => {
                         Phone
                     </Label>
                     <Col md='10'>
-                      <Field name='phoneNum' placeholder='Phone' className='form-control' />
-
+                         <Field name='phoneNum' placeholder='Phone' className='form-control' />
+                         <ErrorMessage name='phoneNum'>
+                            {(msg) => <p className='text-danger'>{msg}</p>}
+                        </ErrorMessage>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -54,7 +63,9 @@ const ContactForm = () => {
                     </Label>
                     <Col md='10'>
                         <Field name='email' placeholder='Email' className='form-control' />
-
+                        <ErrorMessage name='email'>
+                            {(msg) => <p className='text-danger'>{msg}</p>}
+                        </ErrorMessage>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
