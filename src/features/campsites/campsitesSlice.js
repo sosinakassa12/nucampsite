@@ -9,8 +9,8 @@ const campsitesSlice = createSlice({ name: 'campsites',initialState });
 
 export const campsitesReducer = campsitesSlice.reducer;
 
-export const selectAllCampsites = () => {
-    return CAMPSITES;
+export const selectAllCampsites = (state) => {
+    return state.campsites.campsitesArray;
 }
 
 export const selectRandomCampsite = () => {
@@ -22,5 +22,5 @@ export const selectCampsiteById = (id) => {
 };
 
 export const selectFeaturedCampsite = () => {
-    return CAMPSITES.find((campsite) => campsite.featured);
+    return state.campsites.campsitesArray.find((campsite) => campsite.featured);
 };

@@ -1,10 +1,13 @@
+import {useSelector } from 'react-redux';
 import CampsiteCard from './CampsiteCard';
 import {Col,Row} from 'reactstrap';
 import { selectAllCampsites } from './campsitesSlice';
 
 
 const CampsitesList = () => {
-    const campsites = selectAllCampsites();
+    const campsites = useSelector(selectAllCampsites);
+    console.log(campsites);
+    
     return (
         <Row className='ms-auto'>
             {campsites.map((campsite) => {
