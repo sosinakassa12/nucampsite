@@ -3,6 +3,10 @@ import { Card, CardImg, CardText, CardBody, Col } from 'reactstrap';
 const CampsiteDetail = ( {campsite} ) => {
     const { image, name, description } = campsite;
 
+    if (!campsite) {
+        return <p>No campsite selected.</p>;
+    }
+
     return (
          <Col md='5' className='m-1'>
             <Card>
