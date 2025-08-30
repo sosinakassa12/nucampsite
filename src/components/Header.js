@@ -1,4 +1,3 @@
-import NumcapLogo from '../app/assets/img/logo.png';
 import { useState } from 'react';
 import {
     Navbar,
@@ -10,7 +9,12 @@ import {
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import NucampLogo from '../app/assets/img/logo.png';
+import UserLoginForm from '../features/user/UserLoginForm';
+import { useSelector } from 'react-redux';
+import { selectCurrentUser } from '../features/user/userSlice';
+
 const Header = () => {
+    const user = useSelector(selectCurrentUser);
     const [menuOpen, setMenuOpen ] = useState(false);
     return (
         <Navbar dark color='primary' sticky='top' expand='md'>
@@ -20,7 +24,7 @@ const Header = () => {
             </NavbarBrand>
             <NavbarToggler onClick={() => setMenuOpen(!menuOpen)}/>
             <Collapse isOpen={menuOpen} navbar>
-                <Nav className='ms-auto' navbar>
+                <Nav className='ms-auto' navbar>                    
                     <NavItem>
                         <NavLink className='nav-link' to='/'>
                             <i className='fa fa-home fa-lg' /> Home
@@ -40,7 +44,8 @@ const Header = () => {
                         <NavLink className='nav-link' to='/contact'>
                             <i className='fa fa-address-card fa-lg' /> Contact
                         </NavLink>
-                    </NavItem>
+                    </NavItem>  
+                    <UserLoginForm />               
                 </Nav>
             </Collapse>
         </Navbar>
